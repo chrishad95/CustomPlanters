@@ -1,0 +1,103 @@
+Planter box links
+
+Corner Box  https://www.facebook.com/marketplace/item/1660924105157815
+Planter Box with Sign  https://www.facebook.com/marketplace/item/4422543314670013
+Raised Planter 2' x 4' x 36" https://www.facebook.com/marketplace/item/26782011641418735
+Small Solar Planter Box  https://www.facebook.com/marketplace/item/1662901304747284
+Extra Long Planter 72x17x17 https://www.facebook.com/marketplace/item/1298277545138054
+Long Planter 47x17x17  https://www.facebook.com/marketplace/item/961206843502728
+Raised Planter 47x17x36  https://www.facebook.com/marketplace/item/2887995848042038
+Square Planter 16x16x17 https://www.facebook.com/marketplace/item/3104114766646236
+Square Tapered Planter 16x16x12  https://www.facebook.com/marketplace/item/2295003974369746
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Handmade Planters</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1600') center/cover fixed;
+padding:20px;
+}
+.container{max-width:1200px;margin:auto}
+.hero,.card{
+background:rgba(255,255,255,.95);
+border-radius:24px;
+padding:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.2)
+}
+.hero{text-align:center;margin-bottom:20px}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+.image-placeholder{
+height:220px;
+background:#ead6b7;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+font-size:18px;
+}
+.price{background:#2f6d34;color:white;padding:8px 14px;border-radius:999px;font-weight:bold}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.btn{display:inline-block;background:#2f6d34;color:white;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:bold}
+.bottom{display:flex;gap:15px;align-items:center;margin-top:15px}
+.qr{width:90px;height:90px}
+@media print{
+body{background:white;padding:0}
+.btn{display:none}
+.grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<h1>Custom Handmade Planters</h1>
+<p>All planter boxes are handcrafted from cedar for beauty and durability.</p>
+<h2>Riverview Woodworks</h2>
+<p>(717) XXX-XXXX | your@email.com</p>
+<p>Custom planter boxes • benches • shelves • woodworking projects</p>
+</div>
+<div id="cards" class="grid"></div>
+</div>
+<script>
+const items=[
+['Corner Box','$XX','Handmade cedar corner planter.','https://www.facebook.com/marketplace/item/1660924105157815'],
+['Planter Box with Sign','$XX','Cedar planter with customizable sign.','https://www.facebook.com/marketplace/item/4422543314670013'],
+[`Raised Planter 2x4x36`,'$XX','Comfortable raised cedar planter.','https://www.facebook.com/marketplace/item/26782011641418735'],
+['Small Solar Planter','$XX','Solar accent cedar planter.','https://www.facebook.com/marketplace/item/1662901304747284'],
+['Extra Long Planter 72x17x17','$XX','Large cedar flower planter.','https://www.facebook.com/marketplace/item/1298277545138054'],
+['Long Planter 47x17x17','$XX','Perfect for patios and decks.','https://www.facebook.com/marketplace/item/961206843502728'],
+['Raised Planter 47x17x36','$XX','Raised cedar planter with large growing area.','https://www.facebook.com/marketplace/item/2887995848042038'],
+['Square Planter 16x16x17','$XX','Classic square cedar planter.','https://www.facebook.com/marketplace/item/3104114766646236'],
+['Square Tapered Planter','$XX','Modern tapered cedar planter.','https://www.facebook.com/marketplace/item/2295003974369746']
+];
+const cards=document.getElementById('cards');
+items.forEach(i=>{
+cards.innerHTML+=`<div class='card'>
+<div class='image-placeholder'>📷<div>Add planter photo</div></div>
+<div class='row'><h3>${i[0]}</h3><span class='price'>${i[1]}</span></div>
+<p>${i[2]}</p>
+<div class='bottom'>
+<img class='qr' src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(i[3])}'>
+<a class='btn' href='${i[3]}' target='_blank'>View Listing</a>
+</div></div>`
+})
+</script>
+</body>
+</html>
